@@ -12,10 +12,7 @@ def get_marked_users(comment):
 
 def is_user_exist(username):
     user_id = bot.get_user_id_from_username(username)
-    if user_id:
-        return True
-    else:
-        return False
+    return user_id is not None
 
 
 if __name__ == '__main__':
@@ -42,12 +39,10 @@ if __name__ == '__main__':
     for comment in comments:
         marked_users = get_marked_users(comment['text'])
         for marked_user in marked_users:
-            if is_user_exist(marked_user):
-                if str(comment['user_id']) in likers:
-                    if str(comment['user_id']) in followers:
-                        match_user = (comment['user_id'], comment['user']['username'])
-                        competing_users.add(match_user)
-                        break
+            if is_user_exist(marked_user) and (str(comment['user_id']) in likers) and (str(comment['user_id']) in followers):
+                match_user = (comment['user_id'], comment['user']['username'])
+                competing_users.add(match_user)
+                break
 
     for user in competing_users:
         print(user[1])
