@@ -10,9 +10,9 @@ pip install -r requirements.txt
 ```
 
 Далее создайте файл .env для чувствительных данных и заполните его слудующими данными, как в примере:
-1. `INSTAGRAM_LOGIN=myinstalogin
-2. `INSTAGRAM_PASSWORD=12345qwerty
-3. `POST_OWNER=cheapcrap
+1. `INSTAGRAM_LOGIN=myinstalogin`
+2. `INSTAGRAM_PASSWORD=12345qwerty`
+3. `POST_OWNER=cheapcrap`
 
 
 ### Пример запуска и использования
@@ -34,5 +34,5 @@ mwowo
 ...
 ```
 
-Цель проекта
+## Цель проекта
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](dvmn.org)
