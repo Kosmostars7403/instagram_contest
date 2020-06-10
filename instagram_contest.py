@@ -36,13 +36,11 @@ if __name__ == '__main__':
     likers = bot.get_media_likers(media_id)
     followers = bot.get_user_followers(post_owner)
 
-    for comment in comments:
+   for comment in comments:
         marked_users = get_marked_users(comment['text'])
-        for marked_user in marked_users:
-            if is_user_exist(marked_user) and (str(comment['user_id']) in likers) and (str(comment['user_id']) in followers):
-                match_user = (comment['user_id'], comment['user']['username'])
-                competing_users.add(match_user)
-                break
+        if any([is_user_exist(marked_user) for marked_user in marked_users]) and str(comment['user_id']) in likers and str(comment['user_id']) in followers:
+            match_user = (comment['user_id'], comment['user']['username'])
+            competing_users.add(match_user)
 
     for user in competing_users:
         print(user[1])
