@@ -38,7 +38,11 @@ if __name__ == '__main__':
 
    for comment in comments:
         marked_users = get_marked_users(comment['text'])
-        if any([is_user_exist(marked_user) for marked_user in marked_users]) and str(comment['user_id']) in likers and str(comment['user_id']) in followers:
+        friend_mentioned = any([is_user_exist(marked_user) for marked_user in marked_users])
+        liked = str(comment['user_id']) in likers
+        followed = str(comment['user_id']) in followers
+        
+        if friend_mentioned and liked and followed:
             matched_user = (comment['user_id'], comment['user']['username'])
             competing_users.add(matched_user)
 
