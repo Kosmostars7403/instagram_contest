@@ -9,7 +9,7 @@
 pip install -r requirements.txt
 ```
 
-Далее создайте файл .env для чувствительных данных и заполните его слудующими данными, как в примере:
+Далее создайте файл .env для чувствительных данных и заполните его следующими данными, как в примере:
 1. `INSTAGRAM_LOGIN=myinstalogin`
 2. `INSTAGRAM_PASSWORD=12345qwerty`
 3. `POST_OWNER=cheapcrap`
@@ -17,7 +17,9 @@ pip install -r requirements.txt
 
 ### Пример запуска и использования
 Передайте программе на вход ссылку на пост, как в примере:
-`python instagram_contest.py https://www.instagram.com/p/BtON034lPhu/`
+```
+python instagram_contest.py https://www.instagram.com/p/BtON034lPhu/
+```
 
 Далее программа отберет участников по трем критериям:
 1. Участник является подписчиком указанного аккаунта
